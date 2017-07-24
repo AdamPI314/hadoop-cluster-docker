@@ -4,6 +4,10 @@ MAINTAINER Elliot <elliot.srbai@gmail.com>
 
 WORKDIR /root
 
+# supress warnings such as, debconf: unable to initialize frontend: Dialog ...
+FROM debian:sid
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+
 # install openssh-server, openjdk and wget
 RUN apt-get -qq update && apt-get -qq install -y openssh-server openjdk-7-jdk wget
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# the default node number is 3
-N=${1:-3}
+# the default node number is 2 
+N=${1:-2}
 
 
 # start hadoop master container

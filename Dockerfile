@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-MAINTAINER Joway <joway.w@gmail.com>
+MAINTAINER Elliot <elliot.srbai@gmail.com>
 
 WORKDIR /root
 

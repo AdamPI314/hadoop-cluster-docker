@@ -7,7 +7,6 @@ Modified from [joway/hadoop-cluster-docker.](https://github.com/joway/hadoop-clu
 
 ```
 sudo docker pull joway/hadoop-cluster
-
 ```
 
 #### 2. clone github repository
@@ -37,7 +36,7 @@ start hadoop-slave1 container...
 start hadoop-slave2 container...
 root@hadoop-master:~# 
 ```
-- start 3 containers with 1 master and 2 slaves
+- start 2 containers with 1 master and 1 slaves
 - you will get into the /root directory of hadoop-master container
 
 #### 5. start hadoop
@@ -69,11 +68,13 @@ Hello    2
 
 #### 7. sync src
 
-local directory: \~/src/
+local directory:  
+* \~/src/
 
-hadoop master directory : /root/src/
+hadoop master directory:  
+* /root/src/
 
-copy source codes into local directory \~/src/, any changes made locally (\~/src/) will be pushed to hadoop master director(/root/src/). In other owrds, Docker will do an in-place update.
+copy source codes into local directory (\~/src/), any changes made locally (\~/src/) will be pushed to hadoop master director(/root/src/). In other owrds, Docker will do an in-place update.
 
 #### 8. misc:
 1. build docker image  

@@ -6,13 +6,13 @@ Modified from [joway/hadoop-cluster-docker.](https://github.com/joway/hadoop-clu
 #### 1. pull docker image
 
 ```
-sudo docker pull joway/hadoop-cluster
+sudo docker pull drdotevil/scratch:hadoop-cluster-1.0.0
 ```
 
 #### 2. clone github repository
 
 ```
-git clone https://github.com/joway/hadoop-cluster-docker
+git clone https://github.com/AdamPI314/hadoop-cluster-docker.git
 ```
 
 #### 3. create hadoop network

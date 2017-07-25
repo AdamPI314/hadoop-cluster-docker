@@ -1,40 +1,43 @@
 #!/bin/bash
 
-# the default node number is 2 
-N=${1:-2}
+# the default node number is 3 
+N=${1:-3}
 
+# create network named hadoop
+docker network rm $(docker network ls | grep "hadoop" | awk '/ / { print $1 }') &> /dev/null
+docker network create --driver=bridge hadoop
 
 # start hadoop master container
-sudo docker rm -f hadoop-master &> /dev/null
+docker rm -f hadoop-master &> /dev/null
 echo "start hadoop-master container..."
 
 # volume dir
-mkdir ~/src/
-sudo chmod -R 777 ~/src
+mkdir -p ~/src/
+chmod -R 777 ~/src
 
-sudo docker run -itd \
+docker run -itd \
                 --net=hadoop \
                 -p 50070:50070 \
                 -p 8088:8088 \
-		-v ~/src:/root/src \
+				-v ~/src:/root/src \
                 --name hadoop-master \
                 --hostname hadoop-master \
-                joway/hadoop-cluster &> /dev/null
+                drdotevil18/scratch:hadoop-cluster-1.0.0 &> /dev/null
 
 
 # start hadoop slave container
 i=1
 while [ $i -lt $N ]
 do
-	sudo docker rm -f hadoop-slave$i &> /dev/null
+	docker rm -f hadoop-slave$i &> /dev/null
 	echo "start hadoop-slave$i container..."
-	sudo docker run -itd \
+	docker run -itd \
 	                --net=hadoop \
 	                --name hadoop-slave$i \
 	                --hostname hadoop-slave$i \
-	                joway/hadoop-cluster &> /dev/null
+	                drdotevil18/scratch:hadoop-cluster-1.0.0 &> /dev/null
 	i=$(( $i + 1 ))
 done 
 
 # get into hadoop master container
-sudo docker exec -it hadoop-master bash
+docker exec -it hadoop-master bash

@@ -13,7 +13,7 @@ echo "start hadoop-master container..."
 
 # volume dir
 mkdir -p ~/src/ &> /dev/null
-chmod -R 777 ~/src &> /dev/null
+# chmod -R 777 ~/src &> /dev/null
 rm ~/src/{\?,\!}* -rf &> /dev/null
 
 docker run -itd \

@@ -19,7 +19,7 @@ git clone https://github.com/AdamPI314/hadoop-cluster-docker.git
 
 ```
 cd hadoop-cluster-docker
-./start-container.sh
+/bin/sh start-container.sh
 ```
 
 **output:**
@@ -28,21 +28,26 @@ cd hadoop-cluster-docker
 start hadoop-master container...
 start hadoop-slave1 container...
 start hadoop-slave2 container...
-root@hadoop-master:~# 
 ```
 - start 2 containers with 1 master and 1 slaves
 - you will get into the /root directory of hadoop-master container
 
-#### 4. start hadoop
+#### 4. enter master node
 
 ```
-./start-hadoop.sh
+/bin/sh enter_master.sh
 ```
 
-#### 5. run wordcount
+#### 5. start hadoop
 
 ```
-./run-wordcount.sh
+/bin/sh start-hadoop.sh
+```
+
+#### 6. run wordcount
+
+```
+/bin/sh run-wordcount.sh
 ```
 
 **output**
@@ -60,7 +65,7 @@ Hadoop    1
 Hello    2
 ```
 
-#### 6. sync src
+#### 7. sync src
 
 local directory:  
 * \~/src/
@@ -70,10 +75,10 @@ hadoop master directory:
 
 copy source codes into local directory (\~/src/), any changes made locally (\~/src/) will be pushed to hadoop master director(/root/src/). In other owrds, Docker will do an in-place update.
 
-#### 7. misc:
+#### 8. misc:
 1. build docker image  
-* `./build_image.sh`
+* `/bin/sh build_image.sh`
 2. ssh into hadoop_master   
-* `./enter_master.sh`
+* `/bin/sh enter_master.sh`
 3. clear docker container  
-* `./delete_all_container.sh`
+* `/bin/sh delete_all_container.sh`

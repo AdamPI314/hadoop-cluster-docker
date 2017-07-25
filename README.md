@@ -6,7 +6,7 @@ Modified from [joway/hadoop-cluster-docker.](https://github.com/joway/hadoop-clu
 #### 1. pull docker image
 
 ```
-sudo docker pull drdotevil/scratch:hadoop-cluster-1.0.0
+docker pull drdotevil/scratch:hadoop-cluster-1.0.0
 ```
 
 #### 2. clone github repository
@@ -15,17 +15,11 @@ sudo docker pull drdotevil/scratch:hadoop-cluster-1.0.0
 git clone https://github.com/AdamPI314/hadoop-cluster-docker.git
 ```
 
-#### 3. create hadoop network
-
-```
-sudo docker network create --driver=bridge hadoop
-```
-
-#### 4. start container
+#### 3. start container
 
 ```
 cd hadoop-cluster-docker
-sudo ./start-container.sh
+./start-container.sh
 ```
 
 **output:**
@@ -39,13 +33,13 @@ root@hadoop-master:~#
 - start 2 containers with 1 master and 1 slaves
 - you will get into the /root directory of hadoop-master container
 
-#### 5. start hadoop
+#### 4. start hadoop
 
 ```
 ./start-hadoop.sh
 ```
 
-#### 6. run wordcount
+#### 5. run wordcount
 
 ```
 ./run-wordcount.sh
@@ -66,7 +60,7 @@ Hadoop    1
 Hello    2
 ```
 
-#### 7. sync src
+#### 6. sync src
 
 local directory:  
 * \~/src/
@@ -76,10 +70,10 @@ hadoop master directory:
 
 copy source codes into local directory (\~/src/), any changes made locally (\~/src/) will be pushed to hadoop master director(/root/src/). In other owrds, Docker will do an in-place update.
 
-#### 8. misc:
+#### 7. misc:
 1. build docker image  
 * `./build_image.sh`
 2. ssh into hadoop_master   
-* `./enter_master_bash.sh`
+* `./enter_master.sh`
 3. clear docker container  
 * `./delete_all_container.sh`

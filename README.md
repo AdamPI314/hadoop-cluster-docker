@@ -19,7 +19,7 @@ git clone https://github.com/AdamPI314/hadoop-cluster-docker.git
 
 ```
 cd hadoop-cluster-docker
-/bin/sh start-container.sh
+/bin/sh start_container.sh
 ```
 
 **output:**
@@ -41,13 +41,13 @@ start hadoop-slave2 container...
 #### 5. start hadoop
 
 ```
-/bin/sh start-hadoop.sh
+/bin/sh start_hadoop.sh
 ```
 
 #### 6. run wordcount
 
 ```
-/bin/sh run-wordcount.sh
+/bin/sh run_wordcount.sh
 ```
 
 **output**

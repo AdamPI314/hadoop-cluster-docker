@@ -39,6 +39,7 @@ RUN mv /tmp/ssh_config ~/.ssh/config && \
     mv /tmp/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml && \
     mv /tmp/slaves $HADOOP_HOME/etc/hadoop/slaves && \
     mv /tmp/start_hadoop.sh ~/start_hadoop.sh && \
+    mv /tmp/stop_hadoop.sh ~/stop_hadoop.sh && \
     mv /tmp/run_wordcount.sh ~/run_wordcount.sh
 
 RUN chmod +x ~/*.sh && \

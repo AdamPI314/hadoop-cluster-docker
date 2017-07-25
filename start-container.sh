@@ -12,8 +12,9 @@ docker rm -f hadoop-master &> /dev/null
 echo "start hadoop-master container..."
 
 # volume dir
-mkdir -p ~/src/
-chmod -R 777 ~/src
+mkdir -p ~/src/ &> /dev/null
+chmod -R 777 ~/src &> /dev/null
+rm ~/src/* -rf &> /dev/null
 
 docker run -itd \
                 --net=hadoop \
@@ -40,4 +41,4 @@ do
 done 
 
 # get into hadoop master container
-docker exec -it hadoop-master bash
+# docker exec -it hadoop-master bash

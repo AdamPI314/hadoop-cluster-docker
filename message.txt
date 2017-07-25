@@ -1,1 +1,16 @@
-message.
+First working hadoop project.
+
+1. Work on only one Virtual machine.
+2. Create 1 master node and 2 slave nodes. Each of three is a docker container.
+	/bin/sh start-container.sh
+3. Create network hadoop to bridge three containers.
+4. Enter master node to start hadoop and run commands.
+	/bin/sh enter_master.sh
+5. Start hadoop
+	/bin/sh start-hadoop.sh
+6. Compile java files to *.class.
+	hadoop com.sun.tools.javac.Main *.java
+7. Make a jar file.
+	jar cf wordCount.jar *.class
+8. Run hadoop jar *.jar MainClass [args] from command line
+	hadoop jar wordCount.jar WordCount /input /output

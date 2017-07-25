@@ -38,8 +38,8 @@ RUN mv /tmp/ssh_config ~/.ssh/config && \
     mv /tmp/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml && \
     mv /tmp/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml && \
     mv /tmp/slaves $HADOOP_HOME/etc/hadoop/slaves && \
-    mv /tmp/start-hadoop.sh ~/start-hadoop.sh && \
-    mv /tmp/run-wordcount.sh ~/run-wordcount.sh
+    mv /tmp/start_hadoop.sh ~/start_hadoop.sh && \
+    mv /tmp/run_wordcount.sh ~/run_wordcount.sh
 
 RUN chmod +x ~/*.sh && \
     chmod +x $HADOOP_HOME/sbin/*.sh 

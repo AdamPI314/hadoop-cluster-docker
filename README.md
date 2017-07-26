@@ -12,7 +12,7 @@ docker pull drdotevil/scratch:hadoop-cluster-1.0.0
 #### 2. clone github repository
 
 ```
-git clone https://github.com/AdamPI314/hadoop-cluster-docker.git
+git clone https://github.com/AdamPI314/hadoop-cluster-docker-boot2docker.git
 ```
 
 #### 3. start container

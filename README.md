@@ -6,7 +6,7 @@ Modified from [joway/hadoop-cluster-docker.](https://github.com/joway/hadoop-clu
 #### 1. pull docker image
 
 ```
-docker pull drdotevil/scratch:hadoop-cluster-1.0.0
+docker pull drdotevil18/scratch:hadoop-cluster-1.0.0
 ```
 
 #### 2. clone github repository

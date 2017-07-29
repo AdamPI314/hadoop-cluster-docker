@@ -10,6 +10,10 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 # install openssh-server, openjdk and wget
 RUN apt-get -qq update && apt-get -qq install -y openssh-server openjdk-7-jdk wget
 
+# install vim, can live without it
+RUN apt-get -qq install -y vim
+RUN echo "set nu" >> ~/.vimrc 
+
 # install hadoop 2.7.2
 RUN wget https://www-us.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz && \
     tar -xzvf hadoop-2.7.2.tar.gz && \
